@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  illness: MyString
+  doctor: MyString
+  medicine: MyString
+  startDate: 2020-10-01
+  endDate: 2020-10-01
+  dosageAmt: MyString
+  dosageFrequency: MyString
+  dosageTime: 2020-10-01 11:50:10
+  eNotify: false
+
+two:
+  illness: MyString
+  doctor: MyString
+  medicine: MyString
+  startDate: 2020-10-01
+  endDate: 2020-10-01
+  dosageAmt: MyString
+  dosageFrequency: MyString
+  dosageTime: 2020-10-01 11:50:10
+  eNotify: false
