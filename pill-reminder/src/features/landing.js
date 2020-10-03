@@ -4,7 +4,7 @@ import {CurrentUserContext} from '../context/user-context';
 
 export default function Landing() {
     const [currentUserState, setCurrentUserState] = React.useContext(CurrentUserContext);
-    const {isLoading, response, error, doFetch} = useFetch(`http://localhost:4000/medical_histories/${currentUserState.currentUser.id}/users`);
+    const {isLoading, response, error, doFetch} = useFetch(`http://localhost:3000/medical_histories/${currentUserState.currentUser.id}/users`);
     
     React.useEffect(() => {
       doFetch({
