@@ -7,6 +7,7 @@ import Register from './features/register';
 import AuthenticatedRoutes from './components/authenticated-routes';
 import Profile from './features/profile';
 import MedicalHistory from './features/medical-history';
+import AddMedicalHistory from './features/addMedicalHistory'
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
@@ -26,6 +27,11 @@ export default function App() {
             <Route path='/' exact>
               <div className="d-flex mt-5 justify-content-center align-items-center">
                 <MainApp />
+              </div>
+            </Route>
+            <Route path='/addMedicalHistory'>
+              <div className="d-flex mt-5 justify-content-center align-items-center">
+                <AddMedicalHistory />
               </div>
             </Route>
             

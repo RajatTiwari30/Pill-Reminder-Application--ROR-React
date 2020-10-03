@@ -43,9 +43,9 @@ class MedicalHistoriesController < ApplicationController
 
     # for today
     @medical_histories = MedicalHistory
-          .where(user_id: user_id, dependant_id: nil)
-          .where("? BETWEEN startdate AND enddate", DateTime.now.to_date)
-          .order(:startdate, :asc)
+          .where(user_id: user_id, dependent_id: nil)
+          .where("? BETWEEN startDate AND endDate", DateTime.now.to_date)
+          .order(:startDate, :asc)
     
     render json: @medical_histories
   end
