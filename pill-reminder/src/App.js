@@ -29,11 +29,6 @@ export default function App() {
                 <MainApp />
               </div>
             </Route>
-            <Route path='/addMedicalHistory'>
-              <div className="d-flex mt-5 justify-content-center align-items-center">
-                <AddMedicalHistory />
-              </div>
-            </Route>
             
             <Route path="/register">
               <div 
@@ -49,6 +44,13 @@ export default function App() {
                   <Profile />
                 </div>
               </Route>
+
+              <Route path='/addMedicalHistory'>
+                <div className="d-flex mt-5 justify-content-center align-items-center">
+                  <AddMedicalHistory />
+              </div>
+              </Route>
+              
               <Route path="/medical-history">
                 <div 
                   className="d-flex mt-5 justify-content-center align-items-center">

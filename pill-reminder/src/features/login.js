@@ -37,6 +37,7 @@ export default function Login() {
     // Set the auth token in localStorage
     localStorage.setItem(Constant.AUTH_TOKEN,response.token);
     
+    
     // Update the userContext
     setCurrentUserState(state => ({
       ...state,
@@ -57,7 +58,7 @@ export default function Login() {
     
     <div className="card p-5" style={{maxWidth:"400px"}}>
       <form onSubmit={handleSubmit}>
-        <h2>Welcome to Pill Reminder</h2>
+        <h4>Welcome to Pill Reminder</h4>
         <div>
           {response && JSON.stringify(response)}
           {error && JSON.stringify(error)}
@@ -79,11 +80,11 @@ export default function Login() {
             className="form-control" />
         </div>
         <div className="d-flex justify-content-center">
-          <button>Sign in</button>
+          <button className="btn btn-success">Sign in</button>
         </div>
         <div className="d-flex mt-4 justify-content-around">
-          <button>Forgot Password?</button>
-          <Link to="/register">New User</Link>
+          <button className="btn btn-outline-danger">Forgot Password?</button>
+          <Link to="/register"><button className="btn btn-outline-dark">New User</button></Link>
         </div>
       </form>
   

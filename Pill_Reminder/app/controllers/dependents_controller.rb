@@ -8,6 +8,10 @@ class DependentsController < ApplicationController
     render json: @dependents
   end
 
+    # GET /dependents/1/edit
+  def edit
+  end
+
   # GET /dependents/1
   def show
     render json: @dependent
@@ -36,6 +40,14 @@ class DependentsController < ApplicationController
   # DELETE /dependents/1
   def destroy
     @dependent.destroy
+  end
+
+
+  def get_all_dependents
+    user_id = params[:user_id]
+    @dependents = Dependent.where(user_id: user_id)
+
+    render json: @dependents
   end
 
   private

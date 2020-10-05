@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+#clickableAwesomeFontTrash {
+  cursor: pointer;
+  font-size: 19px;
+  color:firebrick;
+}
+
+#clickableAwesomeFontToggle {
+  cursor: pointer;
+  font-size: 25px;
+  color:royalblue;
+}
+
+#tdcenter{
+  text-align: center;
+}
+
+#choiceColour {
+  background-color:whitesmoke;
+  color: black;
+}
+
+#captionID {
+  text-align: center;
+  color: maroon;
+  font-size: 18px;
+  text-decoration: underline;
+}

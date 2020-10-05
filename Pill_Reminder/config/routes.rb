@@ -7,9 +7,14 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get "medical_histories/:user_id/users_with_deps", to: "medical_histories#get_self_and_dependents"
-  get "medical_histories/:user_id/users", to: "medical_histories#get_for_self"
+  get "medical_histories/:user_id/user", to: "medical_histories#get_self_and_dependents"
+  get "medical_histories/:user_id/recent", to: "medical_histories#get_for_self"
   get "medical_histories/:user_id/deps", to: "medical_histories#get_for_dependents"
+
+  get "medical_histories/:user_id/users_all", to: "medical_histories#get_all_for_self"
+  get "medical_histories/:user_id/deps_all", to: "medical_histories#get_all_for_dep"
+  
+  get "dependents/:user_id/dependents", to: "dependents#get_all_dependents"
 
 
   get 'signup', to: 'users#new', as: 'signup'

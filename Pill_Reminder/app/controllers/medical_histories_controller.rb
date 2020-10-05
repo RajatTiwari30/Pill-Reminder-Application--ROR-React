@@ -8,6 +8,9 @@ class MedicalHistoriesController < ApplicationController
     render json: @medical_histories
   end
 
+    # GET /medical_histories/1/edit
+  def edit
+  end
   # GET /medical_histories/1
   def show
     render json: @medical_history
@@ -83,6 +86,20 @@ class MedicalHistoriesController < ApplicationController
   def get_self_and_dependents
     user_id = params[:user_id]
     @medical_histories = MedicalHistory.where(user_id: user_id)
+
+    render json: @medical_histories
+  end
+
+  def get_all_for_self
+    user_id = params[:user_id]
+    @medical_histories = MedicalHistory.where(user_id: user_id, dependent_id: nil)
+
+    render json: @medical_histories
+  end
+
+  def get_all_for_dep
+    user_id = params[:user_id]
+    @medical_histories = MedicalHistory.where(user_id: user_id).where.not(dependent_id: nil)
 
     render json: @medical_histories
   end
