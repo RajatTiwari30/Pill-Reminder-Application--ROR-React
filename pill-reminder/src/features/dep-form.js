@@ -3,28 +3,44 @@ import useFetch from '../hooks/use-fetch';
 
 export default function Depform () {
     let filter = [];
-    const {isLoading, response, error, doFetch} = useFetch("http://localhost:4000/dependents");
-    const [relation, setRelation] = React.useState("Mother");
+    let userID=localStorage.getItem("id");
+    const {isLoading, response, error, doFetch} = useFetch(`http://localhost:4000/dependents/${userID}/dependents`);
+    const [relation, setRelation] = React.useState();
     const [depData, setdepData] = React.useState([]);
-    const depInfo=useFetch("http://localhost:4000/dependents");
-    React.useEffect(() => {
-        depInfo.doFetch({
-        method: "get"
-        })
-    },[])
+    const {isLoading: isloading2, response: response2 , error: error2, doFetch: depInfo}=useFetch(`http://localhost:4000/dependents/${userID}/dependents`);
+    // React.useEffect(() => {
+    //     depInfo.doFetch({
+    //     method: "get"
+    //     })
+    // },[])
 
     React.useEffect(() => {
-        console.log(response);
+      doFetch({
+      method: "get"
+      })
+  },[])
+
+    React.useEffect(() => {
+        
     },[response])
 
     const handleChange = (e) => {
         setRelation(e.target.value)
-        let filteredSet = depInfo.response.filter((d)=>{
-          return d.relation === e.target.value;
-      })
-        setdepData(filteredSet);
-        console.log(depData);
+        
+        depInfo({
+          method: "get"
+        });
     }
+
+    React.useEffect(()=>{
+      if(response2){
+        let dep=response2.filter((item)=>{
+          return item.relation==relation;
+        })
+        setdepData(dep);
+      }},[response2] )
+
+
     return (
     
         <div>

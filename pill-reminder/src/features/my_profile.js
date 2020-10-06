@@ -22,10 +22,10 @@ export default function MyProfile () {
         name: "",
         email: "",
         contact: "",
-        bldgrp: "Enter Blood Group",
+        bldgrp: "",
         dob: "",
-        weight: "Enter Weight",
-        height: "Enter Height"
+        weight: "",
+        height: ""
       });
 
       const handleChange = (e) => {

@@ -74,6 +74,7 @@ export default function AddMedicalHistory() {
                 <div className="form-group">
                 <select  name="dependent_id" value={formData.dependent_id}  className="form-control" placeholder="Select Relation" onChange={handleChange}>
                 <option label="Select Relation Here"></option>
+                <option value="0" key="0">Self</option>
                 {dependent && dependent.map(d => {
                 return (
                 <option value={d.relation=="Self"? 0 : d.id} key={d.id}>{d.relation}</option>
@@ -84,48 +85,48 @@ export default function AddMedicalHistory() {
 
                 <div className="form-group">
                     <input type="text"  name="illness"  onChange={handleChange} 
-                placeholder="Illness" value={formData.illness} className="form-control"/>
+                placeholder="Illness" value={formData.illness} className="form-control" required/>
                 </div>
 
 
                 <div className="form-group">
                     <input type="text" name="doctor" onChange={handleChange} 
-                placeholder="Dr. Name" value={formData.doctor} className="form-control"/>
+                placeholder="Dr. Name" value={formData.doctor} className="form-control" required/>
                 </div>
 
 
                 <div className="form-group">
                     <input type="text" name="medicine" onChange={handleChange} 
-                placeholder="Medicine" value={formData.medicine} className="form-control"/>
+                placeholder="Medicine" value={formData.medicine} className="form-control" required/>
                 </div>
 
 
                 <div className="form-group">
                     <input type="date" name="startDate" onChange={handleChange} 
-                    value={formData.startDate} className="form-control"/>
+                    value={formData.startDate} className="form-control" required/>
                 </div>
               
 
                 <div className="form-group">
                     <input type="date" name="endDate" onChange={handleChange} 
-                    value={formData.endDate} className="form-control"/>
+                    value={formData.endDate} className="form-control" required/>
                 </div>
 
 
                 <div className="form-group">
                     <input type="text" name="dosageAmt" onChange={handleChange} 
-                 placeholder="Dosage Amount" value={formData.dosageAmt} className="form-control"/>
+                 placeholder="Dosage Amount" value={formData.dosageAmt} className="form-control" required/>
                 </div>
 
 
                 <div className="form-group">
                     <input type="text" name="dosageFrequency" onChange={handleChange} 
-                    placeholder="Dosage Frequency" value={formData.dosageFrequency} className="form-control"/>
+                    placeholder="Dosage Frequency" value={formData.dosageFrequency} className="form-control" required/>
                 </div>
 
                 <div className="form-group">
                     <input type="time" name="dosageTime" onChange={handleChange}
-                    value={formData.dosageTime} className="form-control"/>
+                    value={formData.dosageTime} className="form-control" required/>
                 </div>
 
                 <div className="form-group">

@@ -12,7 +12,10 @@ export default function Register() {
     country: "",
     dob: "",
     pwd: "",
-    cpwd: ""
+    cpwd: "",
+    height:"",
+    weight:"",
+    bldgrp:""
   });
 
   const handleChange = (e) => {
@@ -34,7 +37,10 @@ export default function Register() {
           contact: formData.contact,
           country: formData.country,
           dob: formData.dob,
-          password: formData.pwd
+          password: formData.pwd,
+          height: formData.height,
+          weight: formData.weight,
+          bldgrp: formData.bldgrp
         }
       })
     })
@@ -51,48 +57,66 @@ export default function Register() {
             <div className="form-group">
               <input type="text" name="name" 
               onChange={handleChange} placeholder="Name" 
-              value={formData.name} className="form-control" />
+              value={formData.name} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="email" name="email" 
               onChange={handleChange} placeholder="Email Address" 
-              value={formData.email} className="form-control" />
+              value={formData.email} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="number" name="contact" 
               onChange={handleChange} placeholder="Contact" 
-              value={formData.contact} className="form-control" />
+              value={formData.contact} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="text" name="country" 
               onChange={handleChange} placeholder="Country" 
-              value={formData.country} className="form-control" />
+              value={formData.country} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="date" name="dob" 
               onChange={handleChange} 
-              value={formData.dob} className="form-control" />
+              value={formData.dob} className="form-control" required/>
+            </div>
+
+            <div className="form-group">
+              <input type="text" name="height" 
+              onChange={handleChange} placeholder="Height"
+              value={formData.height} className="form-control" required/>
+            </div>
+
+            <div className="form-group">
+              <input type="text" name="weight" 
+              onChange={handleChange} placeholder="Weight"
+              value={formData.weight} className="form-control" required/>
+            </div>
+
+            <div className="form-group">
+              <input type="text" name="bldgrp" 
+              onChange={handleChange} placeholder="Blood Group"
+              value={formData.bldgrp} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="password" name="pwd" 
               onChange={handleChange} placeholder="Password" 
-              value={formData.pwd} className="form-control" />
+              value={formData.pwd} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="password" name="cpwd" 
               onChange={handleChange} placeholder="Confirm Password" 
-              value={formData.cpwd} className="form-control" />
+              value={formData.cpwd} className="form-control" required/>
             </div>
 
             <div className="d-flex mt-4 justify-content-around">
-              <button>Register</button>
-              <Link to="/">Back</Link>
+              <button className="btn btn-success">Register</button>
+              <Link to="/"><button className="btn btn-outline-danger">Back</button></Link>
             </div>
           </form>
           </div>

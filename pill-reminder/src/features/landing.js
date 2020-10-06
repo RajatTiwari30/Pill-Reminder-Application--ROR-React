@@ -6,7 +6,7 @@ export default function Landing() {
     let userID=localStorage.getItem("id");
     console.log(userID);
     const [currentUserState, setCurrentUserState] = React.useContext(CurrentUserContext);
-    const {isLoading, response, error, doFetch} = useFetch(`http://localhost:4000/medical_histories/4/user`);
+    const {isLoading, response, error, doFetch} = useFetch(`http://localhost:4000/medical_histories/${userID}/recent`);
     React.useEffect(() => {
       doFetch({
         method: "get"

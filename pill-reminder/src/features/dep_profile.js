@@ -4,10 +4,10 @@ import useFetch from '../hooks/use-fetch';
 import Depform from './dep-form';
 
 export default function DepsProfile () {
-
-    const {isLoading, response, error, doFetch} = useFetch("http://localhost:4000/dependents");
+    let userID = localStorage.getItem("id");
+    const {isLoading, response, error, doFetch} = useFetch(`http://localhost:4000/dependents`);
     const [showDep, setShowDep] = React.useState(false);
-    let id = localStorage.getItem("id");
+    
     
     const [depData, setDepData] = React.useState({
       relation: "",
@@ -18,7 +18,7 @@ export default function DepsProfile () {
       dob: "",
       weight: "",
       height: "",
-      user_id: id
+      user_id: userID
     });
 
   const handleChange = (e) => {
@@ -64,6 +64,7 @@ export default function DepsProfile () {
 
             <div className="form-group">
               <select value={depData.relation} onChange={handleChange} name="relation" className="form-control">
+                <option label="Select Relation Here"></option>
                 <option value="Mother">Mother</option>
                 <option value="Father">Father</option>
                 <option value="Spouse">Spouse</option>
@@ -76,43 +77,43 @@ export default function DepsProfile () {
             <div className="form-group">
               <input type="text" name="name" 
               onChange={handleChange} placeholder="Name" 
-              value={depData.name} className="form-control" />
+              value={depData.name} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="email" name="email" 
               onChange={handleChange} placeholder="Email Address" 
-              value={depData.email} className="form-control" />
+              value={depData.email} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="number" name="contact" 
               onChange={handleChange} placeholder="Contact" 
-              value={depData.contact} className="form-control" />
+              value={depData.contact} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="text" name="bldgrp" 
               onChange={handleChange} placeholder="Blood Group" 
-              value={depData.bldgrp} className="form-control" />
+              value={depData.bldgrp} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="date" name="dob" 
               onChange={handleChange} 
-              value={depData.dob} className="form-control" />
+              value={depData.dob} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="text" name="weight" 
               onChange={handleChange} placeholder="Weight" 
-              value={depData.weight} className="form-control" />
+              value={depData.weight} className="form-control" required/>
             </div>
 
             <div className="form-group">
               <input type="text" name="height" 
               onChange={handleChange} placeholder="Height" 
-              value={depData.height} className="form-control" />
+              value={depData.height} className="form-control" required/>
             </div>
 
             <div className="d-flex mt-4 justify-content-around">

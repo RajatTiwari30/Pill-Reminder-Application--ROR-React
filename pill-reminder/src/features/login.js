@@ -69,7 +69,7 @@ export default function Login() {
             onChange= {handleChange}
             value={user.email}
             name="email"
-            className="form-control"  />
+            className="form-control"  required />
         </div>
         <div className="form-group">
           <label>Password</label>
@@ -77,13 +77,12 @@ export default function Login() {
             value={user.password}
             onChange= {handleChange}
             name="password"
-            className="form-control" />
+            className="form-control" required />
         </div>
         <div className="d-flex justify-content-center">
           <button className="btn btn-success">Sign in</button>
         </div>
         <div className="d-flex mt-4 justify-content-around">
-          <button className="btn btn-outline-danger">Forgot Password?</button>
           <Link to="/register"><button className="btn btn-outline-dark">New User</button></Link>
         </div>
       </form>

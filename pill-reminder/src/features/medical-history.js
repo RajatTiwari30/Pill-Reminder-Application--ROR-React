@@ -80,6 +80,7 @@ export default function MedicalHistory() {
           <div className="d-flex justify-content-start">         
                 <select  name="relation"  className="form-control" placeholder="Select Relation" onChange={handleChange}>
                 <option label="Select Relation Here"></option>
+                <option value="0" key="0">Self</option>
                 {dependent && dependent.map(d => {
                 return (
                 <option value={d.relation=="Self"? 0 : d.id} key={d.id}>{d.relation}</option>

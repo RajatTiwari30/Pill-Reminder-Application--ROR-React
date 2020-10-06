@@ -49,7 +49,7 @@ class MedicalHistoriesController < ApplicationController
 
     # for today
     @medical_histories = MedicalHistory
-          .where(user_id: user_id, dependent_id: nil)
+          .where(user_id: user_id, dependent_id: 0, eNotify: 'true')
           .where("? BETWEEN startDate AND endDate", DateTime.now.to_date)
           .order(:startDate, :asc)
     
