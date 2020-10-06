@@ -72,7 +72,7 @@ export default function MedicalHistory() {
               return item.id !=delid;
             })
             setHistories(newhistory);
-          }} )
+          }},[response2] )
 
     return (
       <div>
