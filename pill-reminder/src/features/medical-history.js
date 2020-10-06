@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import useFetch from '../hooks/use-fetch';
 import {CurrentUserContext} from '../context/user-context';
-import { FaTrash, FaToggleOn, FaToggleOff } from 'react-icons/fa';
+import { FaTrash, FaBell, FaRegBellSlash } from 'react-icons/fa';
 export default function MedicalHistory() {
   const [histories, setHistories] = React.useState([]);
   const [currentUserState, setCurrentUserState] = React.useContext(CurrentUserContext);
@@ -64,23 +64,15 @@ export default function MedicalHistory() {
             method: "delete"
           });
           alert("Medical History Deleted");
-          if(depId===0){
-            if(userhistoryfetch.response){
-              let self_histories = userhistoryfetch.response.filter((h) => {
-                return h.dependent_id === 0
-              })
-              setHistories(self_histories);
-            }
-            }
-          else{
-            if(dephistoryfetch.response){
-              let dep_histories = dephistoryfetch.response.filter((d) => {
-                return d.dependent_id === depId
-              })
-              setHistories(dep_histories);
-            }
-          }
         }
+
+        React.useEffect(()=>{
+          if(response2){
+            let newhistory=histories.filter((item)=>{
+              return item.id !=delid;
+            })
+            setHistories(newhistory);
+          }} )
 
     return (
       <div>
@@ -131,7 +123,7 @@ export default function MedicalHistory() {
                     <td>{h.dosageAmt}</td>
                     <td>{h.dosageFrequency}</td>
                     <td>{(h.dosageTime)}</td>
-                <td id="tdcenter"><span id='clickableAwesomeFontToggle'>{h.eNotify? <FaToggleOn/> : <FaToggleOff/>}</span></td>
+                    <td id="tdcenter"><span id='clickableAwesomeFontToggle'>{h.eNotify? <FaBell/> : <FaRegBellSlash/>}</span></td>
                     <td id="tdcenter"><span id='clickableAwesomeFontTrash' onClick={() => handleDelete(h.id)}><FaTrash/></span></td>
                   </tr>
                 )

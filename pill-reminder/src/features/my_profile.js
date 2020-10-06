@@ -103,8 +103,8 @@ export default function MyProfile () {
             </div>
 
             <div className="d-flex mt-4 justify-content-around">
-            <button className="btn btn-outline-success">Submit</button>
-              <Link to="/profile"><button className="btn btn-outline-danger">Cancel</button></Link>
+            <button className="btn btn-outline-success">Update Information</button>
+              
             </div>
           </form>
         </div>

@@ -39,8 +39,7 @@ export default function App() {
             
             <AuthenticatedRoutes>
               <Route path="/profile">
-                <div 
-                  className="d-flex mt-5 justify-content-center align-items-center">
+                <div>
                   <Profile />
                 </div>
               </Route>

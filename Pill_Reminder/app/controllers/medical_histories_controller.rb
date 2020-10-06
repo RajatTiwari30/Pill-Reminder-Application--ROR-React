@@ -39,6 +39,9 @@ class MedicalHistoriesController < ApplicationController
   # DELETE /medical_histories/1
   def destroy
     @medical_history.destroy
+    respond_to do |format|
+    format.json {render json: {id: @medical_history.id}, status: :ok }
+    end
   end
 
   def get_for_self

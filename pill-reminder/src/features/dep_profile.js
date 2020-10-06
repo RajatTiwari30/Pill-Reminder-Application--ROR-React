@@ -53,8 +53,8 @@ export default function DepsProfile () {
     }
 
     return(
-        <div className="d-flex justify-content-end">
-            <div><button className="btn btn-secondary" onClick={toggleView}>Toggle View/Add Dependent</button></div>
+        <div className="d-flex justify-content-between">
+            <div><button className="btn btn-secondary" onClick={toggleView}>Toggle View/Add Dependents</button></div>
             {!showDep && 
             <Depform />
             }

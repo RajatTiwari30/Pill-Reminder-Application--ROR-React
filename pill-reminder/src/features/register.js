@@ -5,7 +5,6 @@ import useFetch from '../hooks/use-fetch';
 export default function Register() {
 
   const {isLoading, response, error, doFetch} = useFetch("http://localhost:4000/users.json");
-  const depAdd=
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
