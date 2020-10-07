@@ -124,7 +124,7 @@ export default function MedicalHistory() {
                     <td>{h.dosageAmt}</td>
                     <td>{h.dosageFrequency}</td>
                     <td>{(h.dosageTime)}</td>
-                    <td id="tdcenter"><span id='clickableAwesomeFontToggle'>{h.eNotify? <FaBell/> : <FaRegBellSlash/>}</span></td>
+                    <td id="tdcenter"><span id='nonclickableAwesomeFontToggle'>{h.eNotify? <FaBell/> : <FaRegBellSlash/>}</span></td>
                     <td id="tdcenter"><span id='clickableAwesomeFontTrash' onClick={() => handleDelete(h.id)}><FaTrash/></span></td>
                   </tr>
                 )

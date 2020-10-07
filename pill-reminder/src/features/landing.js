@@ -23,7 +23,7 @@ export default function Landing() {
         <Link to="/addMedicalHistory">
               <button type="button" className="btn btn-secondary">Add Medical History</button>
         </Link>
-        <table className="table table-bordered">
+        <table className="table table-bordered table-sm">
           <caption id="captionID">Medication Alert !!</caption>
           <thead className="table-warning">
             <tr>

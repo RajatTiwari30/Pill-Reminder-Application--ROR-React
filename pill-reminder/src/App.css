@@ -49,6 +49,11 @@
   color: #282c34;
 }
 
+#nonclickableAwesomeFontToggle {
+  font-size: 20px;
+  color: #282c34;
+}
+
 #tdcenter{
   text-align: center;
 }
@@ -61,6 +66,6 @@
 #captionID {
   text-align: center;
   color: maroon;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: underline;
 }
