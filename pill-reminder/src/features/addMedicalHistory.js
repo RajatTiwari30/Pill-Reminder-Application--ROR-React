@@ -65,6 +65,7 @@ export default function AddMedicalHistory() {
         }})
       })
       alert("Medical History Added !");
+      // setFormData();
     }
 
     return(

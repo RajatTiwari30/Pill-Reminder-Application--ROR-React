@@ -30,7 +30,6 @@ export default function DepsProfile () {
 
   const handleDepSubmit = (e) => {
     e.preventDefault();
-    alert(JSON.stringify(depData));
     console.log (depData);
     doFetch({
         method: "post",
@@ -47,6 +46,7 @@ export default function DepsProfile () {
             user_id: depData.user_id
         }})
         })
+        alert("Dependent Added !");
   }
     const toggleView = () => {
         setShowDep(p =>!p)

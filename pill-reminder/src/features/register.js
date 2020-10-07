@@ -51,6 +51,7 @@ export default function Register() {
       })
     })
     alert("Registration Successful !");
+    setFormData();
   }
   else{
     alert("Confirm Password should match Password.");
