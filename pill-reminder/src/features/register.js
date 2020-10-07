@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom';
 import useFetch from '../hooks/use-fetch';
 
 export default function Register() {
-
+  var passwordValidator = require('password-validator');
+  var schema = new passwordValidator();
+  schema.is().min(6).is().max(25).has().uppercase().has().lowercase().has().digits().has().not().spaces();
   const {isLoading, response, error, doFetch} = useFetch("http://localhost:4000/users.json");
   const [formData, setFormData] = React.useState({
     name: "",
@@ -27,7 +29,11 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(JSON.stringify(formData));
+    if(!schema.validate(formData.pwd)){
+      alert("Password(6-25 characters) must contain a combination of lower case letters, upper case letters, digits and spaces should be avoided.");
+    }
+    else{
+      if(formData.pwd===formData.cpwd){
     doFetch({
       method: "post",
       body: JSON.stringify({
@@ -44,6 +50,12 @@ export default function Register() {
         }
       })
     })
+    alert("Registration Successful !");
+  }
+  else{
+    alert("Confirm Password should match Password.");
+  }
+  }
   }
 
     return (

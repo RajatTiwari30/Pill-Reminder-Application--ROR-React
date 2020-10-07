@@ -47,7 +47,6 @@ export default function AddMedicalHistory() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      alert(JSON.stringify(formData));
       doFetch({
         method: "post",
         body: JSON.stringify({
@@ -65,6 +64,7 @@ export default function AddMedicalHistory() {
             dependent_id: formData.dependent_id
         }})
       })
+      alert("Medical History Added !");
     }
 
     return(

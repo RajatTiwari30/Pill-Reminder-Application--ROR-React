@@ -37,7 +37,6 @@ export default function MyProfile () {
 
       const handleUserSubmit = (e) => {
         e.preventDefault();
-        alert(JSON.stringify(userData));
         doFetch({
             method: "put",
             body: JSON.stringify({
@@ -53,6 +52,7 @@ export default function MyProfile () {
               }
             )
           })
+          alert("User Updated !");
       }
 
     return ( 
